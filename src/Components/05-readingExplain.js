@@ -1,61 +1,36 @@
 import React from "react";
 
-function ReadingExplain() {
+function ReadingExplain(props) {
+  const cardsDealt = props.cardsDealt;
+
+  const explainReading = cardsDealt.map((d, i) => {
+    return (
+      <div className="row" key={i}>
+        <div className="col-sm-1" />
+        <div className="col-sm-1"> Placement Title </div>
+        <div className="col-sm-5 readingDescPic">
+          <img src={cardsDealt[i].pic} alt={cardsDealt[i].cardName} />
+        </div>
+        <div className="col-sm-4 readingDesc">
+          {cardsDealt[i].cardName}
+          <br />
+          {cardsDealt[i].meaning}
+          <br />
+          <br />
+          Placed at position {i}
+          <br />
+          Placement Desc
+        </div>
+        <div className="col-sm-1" />
+      </div>
+    );
+  });
+
   return (
     <div id="readingExplain" className="container-sm">
       What your reading means:
       <br />
-      <div className="row">
-        <div className="col-sm-2" />
-        <div className="col-sm-4 readingDescPic">
-          <img src="https://www.trustedtarot.com/img/cards/the-magician.png" />
-        </div>
-        <div className="col-sm-4 readingDesc">
-          CARD NAME
-          <br />
-          Description
-          <br />
-          <br />
-          PLACEMENT
-          <br />
-          Placement Desc
-        </div>
-        <div className="col-sm-2" />
-      </div>
-      <div className="row">
-        <div className="col-sm-2" />
-        <div className="col-sm-4 readingDescPic">
-          <img src="https://www.trustedtarot.com/img/cards/the-magician.png" />
-        </div>
-        <div className="col-sm-4 readingDesc">
-          CARD NAME
-          <br />
-          Description
-          <br />
-          <br />
-          PLACEMENT
-          <br />
-          Placement Desc
-        </div>
-        <div className="col-sm-2" />
-      </div>
-      <div className="row">
-        <div className="col-sm-2" />
-        <div className="col-sm-4 readingDescPic">
-          <img src="https://www.trustedtarot.com/img/cards/the-magician.png" />
-        </div>
-        <div className="col-sm-4 readingDesc">
-          CARD NAME
-          <br />
-          Description
-          <br />
-          <br />
-          PLACEMENT
-          <br />
-          Placement Desc
-        </div>
-        <div className="col-sm-2" />
-      </div>
+      {explainReading}
     </div>
   );
 }
