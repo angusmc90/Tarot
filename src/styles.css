@@ -1,0 +1,125 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/* 
+font-family: 'Aladin', cursive; - For Zoltar
+font-family: 'Lora', serif; - For Card Names
+font-family: 'Raleway', sans-serif; - for most text
+*/
+
+body {
+  background-color: #720a71;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  color: #000000;
+}
+
+/* 
+*
+*
+END BODY & MASTER STYLES
+*
+START HEADER
+*
+*
+*/
+header {
+  background-color: #7b0051;
+  font-family: "Aladin", cursive;
+  font-size: 65px;
+  line-height: 1.2em;
+  padding: 25px 10px;
+}
+
+/* 
+*
+*
+END HEADER
+*
+START INSTRUCTIONS
+*
+*
+*/
+
+#instructions {
+  background-color: #710a01;
+}
+
+/* 
+*
+*
+END INSTRUCTIONS
+*
+START READING SELECT (&drop down styling)
+*
+*
+*/
+
+#readingSelect {
+  background-color: #7b0051;
+}
+
+/* 
+*
+*
+END READING SELECT (&drop down styling)
+*
+START SHUFFLE
+*
+*
+*/
+
+#shuffle {
+  background-color: #710a01;
+}
+
+/* 
+*
+*
+END SHUFFLE
+*
+START READINGTABLE (& card styles)
+*
+*
+*/
+
+#readingTable {
+  background-color: #7b0051;
+}
+
+.cardPic {
+  display: inline;
+}
+
+img {
+  width: 100px;
+}
+
+/* 
+*
+*
+END READINGTABLE (& card styles)
+*
+START READINGEXPLAIN
+*
+*
+*/
+
+#readingExplain {
+  background-color: #710a01;
+}
+/* 
+*
+*
+END READINGEXPLAIN
+*
+START FOOTER
+*
+*
+*/
+
+footer {
+  background-color: #7b0051;
+}
