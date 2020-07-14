@@ -26,11 +26,14 @@ START HEADER
 *
 */
 header {
-  background-color: #7b0051;
   font-family: "Aladin", cursive;
   font-size: 65px;
   line-height: 1.2em;
   padding: 25px 10px;
+}
+
+header > div {
+  background-color: yellow;
 }
 
 /* 
@@ -89,12 +92,13 @@ START READINGTABLE (& card styles)
   background-color: #7b0051;
 }
 
-.cardPic {
+/* .cardPic {
   display: inline;
 }
+*/
 
 img {
-  width: 100px;
+  max-width: 100%;
 }
 
 /* 

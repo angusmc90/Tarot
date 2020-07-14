@@ -13,7 +13,11 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <!--bootstrop css-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aladin&family=Lora:ital,wght@1,700&family=Raleway:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Latest compiled and minified CSS -->
     <link
       rel="stylesheet"
@@ -28,10 +32,7 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aladin&family=Lora:ital,wght@1,700&family=Raleway:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -47,9 +48,11 @@
   <body>
     <div id="root"></div>
     <header>
-      Zoltar
+      <div class="container-md">
+        Zoltar
+      </div>
     </header>
-    <div id="instructions" class="container">
+    <div id="instructions" class="container-sm">
       Destiny is not a matter of chance, it is a matter of choice. I'll tell you
       your fortune if you give me a quarter. Lorem ipsum dolor sit amet,
       consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -59,41 +62,54 @@
       nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
       culpa qui officia deserunt mollit anim id est laborum.
     </div>
-    <div id="readingSelect">
-      <div>
-        pic your reading:
+    <div id="readingSelect" class="container-sm">
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3">
+          pic your reading:
+        </div>
+        <div class="col-sm-3">
+          <select>
+            <option>Select</option>
+            <option>Two Card</option>
+            <option>three card</option>
+            <option>other</option>
+          </select>
+        </div>
+        <div class="col-sm-3"></div>
       </div>
-      <div>
-        <select>
-          <option>Select</option>
-          <option>Two Card</option>
-          <option>three card</option>
-          <option>other</option>
-        </select>
-      </div>
-      <br /><br />
-      This is what you should expect from this reading
+      <p>This is what you should expect from this reading</p>
     </div>
-    <div id="shuffle">
-      Control Your Fate / Shuffle the Deck:<br />
-      <button>Shuffle</button> <button>Cut</button><br />
-      <button>Deal (New Reading)</button>
+    <div id="shuffle" class="container-sm">
+      Control Your Fate / Shuffle the Deck:
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <button class="col-sm-2">Shuffle</button>
+        <!--<div class="col-sm-1"></div> -->
+        <button class="col-sm-2">Cut</button>
+        <div class="col-sm-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <button class="col-sm-4">Deal (New Reading)</button>
+        <div class="col-sm-4"></div>
+      </div>
     </div>
     <div id="readingTable">
-      Your Reading:<br /><br />
-      <div style="cardPic">
-        <img src="https://www.trustedtarot.com/img/cards/the-magician.png" />
+      Your Reading:<br />
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-2">
+          <img src="https://www.trustedtarot.com/img/cards/the-magician.png" /><br>Card Name
+        </div>
+        <div class="col-sm-2"">
+          <img src="https://www.trustedtarot.com/img/cards/the-magician.png" /><br>Card Name
+        </div>
+        <div class="col-sm-2"">
+          <img src="https://www.trustedtarot.com/img/cards/the-magician.png" /><br>Card Name
+        </div>
+        <div class="col-sm-3"></div>
       </div>
-      |
-      <div style="cardPic">
-        <img src="https://www.trustedtarot.com/img/cards/the-magician.png" />
-      </div>
-      |
-      <div style="cardPic">
-        <img src="https://www.trustedtarot.com/img/cards/the-magician.png" />
-      </div>
-      <br />
-      Name 1 | Name 2 | Name 3
     </div>
     <div id="readingExplain">
       What your reading means:
