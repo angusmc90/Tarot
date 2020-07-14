@@ -65,9 +65,9 @@ export default function App() {
       <Spacer />
       <Shuffle />
       <Spacer />
-      <ReadingTable />
+      <ReadingTable deck={deck} />
       <Spacer />
-      <ReadingExplain />
+      <ReadingExplain deck={deck} />
       <Spacer />
       <Footer />
     </div>

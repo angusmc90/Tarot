@@ -1,36 +1,26 @@
 import React from "react";
 
-function ReadingTable() {
+function ReadingTable(props) {
+  const spreadLength = 3;
+
+  const cardsDealt = props.deck.slice(0, spreadLength);
+
+  const readingSpread = cardsDealt.map((d, i) => {
+    return (
+      //make col-# divisible by 12?
+      <div className="col-4">
+        <img src={props.deck[i].pic} alt={props.deck[i].cardName} />
+        <br />
+        {props.deck[i].cardName}
+      </div>
+    );
+  });
+
   return (
     <div id="readingTable" className="container-sm">
       Your Reading:
       <br />
-      <div className="row">
-        <div className="col-4">
-          <img
-            src="https://www.trustedtarot.com/img/cards/the-magician.png"
-            alt="card"
-          />
-          <br />
-          Card Name
-        </div>
-        <div className="col-4">
-          <img
-            src="https://www.trustedtarot.com/img/cards/the-magician.png"
-            alt="card"
-          />
-          <br />
-          Card Name
-        </div>
-        <div className="col-4">
-          <img
-            src="https://www.trustedtarot.com/img/cards/the-magician.png"
-            alt="card"
-          />
-          <br />
-          Card Name
-        </div>
-      </div>
+      <div className="row">{readingSpread}</div>
     </div>
   );
 }
