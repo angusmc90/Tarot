@@ -57,6 +57,12 @@ export default function App() {
     }
   }, []);
 
+  const spreadLength = 3;
+  // will need to lift this up
+
+  const cardsDealt = deck.slice(0, spreadLength);
+  // will need to lift this up
+
   return (
     <div className="App">
       <Header />
@@ -65,9 +71,9 @@ export default function App() {
       <Spacer />
       <Shuffle />
       <Spacer />
-      <ReadingTable deck={deck} />
+      <ReadingTable cardsDealt={cardsDealt} />
       <Spacer />
-      <ReadingExplain deck={deck} />
+      <ReadingExplain cardsDealt={cardsDealt} />
       <Spacer />
       <Footer />
     </div>
