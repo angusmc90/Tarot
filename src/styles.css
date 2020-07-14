@@ -10,10 +10,20 @@ font-family: 'Raleway', sans-serif; - for most text
 */
 
 body {
-  background-color: #720a71;
+  background-color: #32435e;
   text-align: center;
   font-family: "Raleway", sans-serif;
   color: #000000;
+}
+
+.spacer {
+  text-align: center;
+  background-color: #7b0051;
+  margin: 25px 0;
+}
+
+img {
+  max-width: 75%;
 }
 
 /* 
@@ -26,14 +36,20 @@ START HEADER
 *
 */
 header {
+  background-color: #720a71;
   font-family: "Aladin", cursive;
-  font-size: 65px;
-  line-height: 1.2em;
   padding: 25px 10px;
+  color: #f1b32d;
+  letter-spacing: 4px;
 }
 
-header > div {
-  background-color: yellow;
+#zoltar {
+  font-size: 75px;
+  line-height: 70px;
+}
+
+header .byline {
+  font-size: 20px;
 }
 
 /* 
@@ -41,13 +57,16 @@ header > div {
 *
 END HEADER
 *
+START COSMOS
 START INSTRUCTIONS
 *
 *
 */
 
 #instructions {
-  background-color: #710a01;
+  padding: 20px 45px;
+  text-align: justify;
+  font-style: italic;
 }
 
 /* 
@@ -61,13 +80,21 @@ START READING SELECT (&drop down styling)
 */
 
 #readingSelect {
-  background-color: #7b0051;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 20px 45px 10px;
+}
+
+#readingSelect p {
+  margin: 0;
+  padding: 10px 45px;
+  text-align: justify;
 }
 
 /* 
 *
 *
 END READING SELECT (&drop down styling)
+END COSMOS
 *
 START SHUFFLE
 *
@@ -75,7 +102,13 @@ START SHUFFLE
 */
 
 #shuffle {
-  background-color: #710a01;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+}
+
+button {
+  width: 85%;
+  margin: 5px 3px;
 }
 
 /* 
@@ -89,16 +122,8 @@ START READINGTABLE (& card styles)
 */
 
 #readingTable {
-  background-color: #7b0051;
-}
-
-/* .cardPic {
-  display: inline;
-}
-*/
-
-img {
-  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 30px 15px;
 }
 
 /* 
@@ -112,8 +137,27 @@ START READINGEXPLAIN
 */
 
 #readingExplain {
-  background-color: #710a01;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 30px 15px;
 }
+
+#readingExplain > .row {
+  padding: 8px 0px;
+}
+
+/* at size of screen here, center text
+https://www.w3schools.com/bootstrap4/bootstrap_grid_basic.asp
+ */
+
+.readingDescPic {
+  text-align: right;
+}
+
+.readingDesc {
+  text-align: left;
+  padding: 15px 0;
+}
+
 /* 
 *
 *
@@ -125,5 +169,7 @@ START FOOTER
 */
 
 footer {
-  background-color: #7b0051;
+  /* background-color: #7b0051; */
+  padding: 15px 10px 30px;
+  background-color: #720a71;
 }
