@@ -3,7 +3,7 @@ import "./styles.css";
 import Header from "./Components/01-Header";
 import Cosmos from "./Components/02-Cosmos";
 import Shuffle from "./Components/03-Shuffle";
-import ReadingTable from "./Components/04-readingTable";
+import ThreeCardTable from "./Components/ReadingTable/04-threeCardTable";
 import ReadingExplain from "./Components/05-readingExplain";
 import Footer from "./Components/06-Footer";
 import Spacer from "./Components/99-Spacer";
@@ -53,6 +53,7 @@ export default function App() {
         };
         cardsArr.push(card);
       }
+
       setDeck(cardsArr);
     }
   }, []);
@@ -63,15 +64,32 @@ export default function App() {
   const cardsDealt = deck.slice(0, spreadLength);
   // will need to lift this up
 
+  const shuffleDeck = () => {
+    // https://javascript.info/task/shuffle
+    // https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+
+    //map the deck into a new faux-array
+    let shuffleArr = deck.map(d => d);
+    // starting from the end of the arr...
+    for (let i = shuffleArr.length - 1; i > 0; i--) {
+      // ...pick a random position / card in front of i...
+      let j = Math.floor(Math.random() * (i + 1));
+      // ... and swap those two cards / reassign the positions
+      [shuffleArr[i], shuffleArr[j]] = [shuffleArr[j], shuffleArr[i]];
+    }
+    // update deck state
+    setDeck(shuffleArr);
+  };
+
   return (
     <div className="App">
       <Header />
       <Spacer />
       <Cosmos />
       <Spacer />
-      <Shuffle />
+      <Shuffle shuffleDeck={shuffleDeck} />
       <Spacer />
-      <ReadingTable cardsDealt={cardsDealt} />
+      <ThreeCardTable cardsDealt={cardsDealt} />
       <Spacer />
       <ReadingExplain cardsDealt={cardsDealt} />
       <Spacer />
