@@ -3,7 +3,7 @@ import "./styles.css";
 import Header from "./Components/01-Header";
 import Cosmos from "./Components/02-Cosmos";
 import Shuffle from "./Components/03-Shuffle";
-import ThreeCardTable from "./Components/ReadingTable/04-threeCardTable";
+import ThreeCardTable from "./Components/ReadingTables/04-threeCardTable";
 import ReadingExplain from "./Components/05-readingExplain";
 import Footer from "./Components/06-Footer";
 import Spacer from "./Components/99-Spacer";
@@ -21,7 +21,8 @@ export default function App() {
       past: "past",
       present: "present",
       future: "future",
-      yesno: "yes or no"
+      yesno: "yes or no",
+      inverted: false
     }
   ]);
 
@@ -49,7 +50,8 @@ export default function App() {
           past: data.feed.entry[i].gsx$past.$t,
           present: data.feed.entry[i].gsx$present.$t,
           future: data.feed.entry[i].gsx$future.t,
-          yesno: data.feed.entry[i].gsx$yesno.$t
+          yesno: data.feed.entry[i].gsx$yesno.$t,
+          inverted: false
         };
         cardsArr.push(card);
       }
@@ -58,11 +60,9 @@ export default function App() {
     }
   }, []);
 
+  // find a way to use redux for these states
   const spreadLength = 3;
-  // will need to lift this up
-
   const cardsDealt = deck.slice(0, spreadLength);
-  // will need to lift this up
 
   const shuffleDeck = () => {
     // https://javascript.info/task/shuffle
@@ -76,6 +76,7 @@ export default function App() {
       let j = Math.floor(Math.random() * (i + 1));
       // ... and swap those two cards / reassign the positions
       [shuffleArr[i], shuffleArr[j]] = [shuffleArr[j], shuffleArr[i]];
+      // make sure to add a line that might invert the card
     }
     // update deck state
     setDeck(shuffleArr);
