@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import Header from "./Components/01-Header";
-import Cosmos from "./Components/02-Cosmos";
-import Shuffle from "./Components/03-Shuffle";
-import ThreeCardTable from "./Components/ReadingTables/04-threeCardTable";
-import ReadingExplain from "./Components/05-readingExplain";
-import Footer from "./Components/06-Footer";
-import Spacer from "./Components/99-Spacer";
+import Header from "./components/01-Header";
+import Cosmos from "./components/02-Cosmos";
+import Shuffle from "./components/03-Shuffle";
+import ThreeCardTable from "./components/readingTables/04-threeCardTable";
+import ReadingExplain from "./components/05-readingExplain";
+import Footer from "./components/06-Footer";
+import Spacer from "./components/99-Spacer";
 
 export default function App() {
   const [deck, setDeck] = useState([
