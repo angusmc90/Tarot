@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./styles.css";
 import Header from "./components/01-Header";
 import Cosmos from "./components/02-Cosmos";
-import Shuffle from "./components/03-Shuffle";
+import DeckActions from "./components/03-DeckActions";
 import ThreeCardTable from "./components/readingTables/04-threeCardTable";
 import ReadingExplain from "./components/05-readingExplain";
 import Footer from "./components/06-Footer";
@@ -60,7 +60,6 @@ export default function App() {
     }
   }, []);
 
-  // find a way to use redux for these states
   const spreadLength = 3;
   const cardsDealt = deck.slice(0, spreadLength);
 
@@ -85,15 +84,13 @@ export default function App() {
   return (
     <div className="App">
       <Header />
-      <Spacer />
       <Cosmos />
       <Spacer />
-      <Shuffle shuffleDeck={shuffleDeck} />
+      <DeckActions shuffleDeck={shuffleDeck} />
       <Spacer />
       <ThreeCardTable cardsDealt={cardsDealt} />
       <Spacer />
       <ReadingExplain cardsDealt={cardsDealt} />
-      <Spacer />
       <Footer />
     </div>
   );

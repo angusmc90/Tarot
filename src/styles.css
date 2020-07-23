@@ -23,8 +23,12 @@ body {
 
 .spacer {
   text-align: center;
-  background-color: #7b0051;
+  background-color: #7b005296;
   margin: 25px 0;
+  /* border: 1px solid #f1b22e; */
+  border-radius: 100px;
+  box-shadow: 1px 1px 10px #f1b22e;
+  line-height: 10px;
 }
 
 img {
@@ -46,11 +50,13 @@ header {
   padding: 25px 10px;
   color: #f1b32d;
   letter-spacing: 4px;
+  margin-bottom: 30px;
 }
 
 #zoltar {
   font-size: 75px;
   line-height: 70px;
+  text-shadow: 3px 3px 15px #000000;
 }
 
 header .byline {
@@ -87,6 +93,8 @@ START READING SELECT (&drop down styling)
 
 #readingSelect {
   background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 5px 5px 10px #000000;
+  border-radius: 8px;
   padding: 20px 45px 10px;
 }
 
@@ -109,6 +117,8 @@ START SHUFFLE
 
 #shuffle {
   background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px #000000;
   padding: 20px;
 }
 
@@ -131,6 +141,8 @@ START READINGTABLE (& card styles)
   background-color: rgba(0, 0, 0, 0.3);
   padding: 30px 15px;
   color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px #000000;
 }
 
 /* 
@@ -146,6 +158,8 @@ START READINGEXPLAIN
 #readingExplain {
   background-color: rgba(255, 255, 255, 0.3);
   padding: 30px 15px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px #000000;
 }
 
 #readingExplain > .row {
@@ -178,5 +192,6 @@ START FOOTER
 footer {
   /* background-color: #7b0051; */
   padding: 15px 10px 30px;
+  margin-top: 40px;
   background-color: rgba(114, 10, 113, 0.7);
 }
