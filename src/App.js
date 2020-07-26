@@ -3,7 +3,7 @@ import "./styles.css";
 import Header from "./components/01-Header";
 import Cosmos from "./components/02-Cosmos";
 import DeckActions from "./components/03-DeckActions";
-import ThreeCardTable from "./components/readingTables/04-threeCardTable";
+import ThreeCardTable from "./components/readingTables/04-03CardTable";
 import ReadingExplain from "./components/05-readingExplain";
 import Footer from "./components/06-Footer";
 import Spacer from "./components/99-Spacer";
