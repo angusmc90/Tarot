@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import Header from "./Components/01-Header";
-import Cosmos from "./Components/02-Cosmos";
-import Shuffle from "./Components/03-Shuffle";
-import ReadingTable from "./Components/04-readingTable";
-import ReadingExplain from "./Components/05-readingExplain";
-import Footer from "./Components/06-Footer";
-import Spacer from "./Components/99-Spacer";
+import Header from "./components/01-Header";
+import Cosmos from "./components/02-Cosmos";
+import DeckActions from "./components/03-DeckActions";
+import ThreeCardTable from "./components/readingTables/04-03CardTable";
+import ReadingExplain from "./components/05-readingExplain";
+import Footer from "./components/06-Footer";
+import Spacer from "./components/99-Spacer";
 
 export default function App() {
   const [deck, setDeck] = useState([
@@ -21,7 +21,8 @@ export default function App() {
       past: "past",
       present: "present",
       future: "future",
-      yesno: "yes or no"
+      yesno: "yes or no",
+      inverted: false
     }
   ]);
 
@@ -49,26 +50,47 @@ export default function App() {
           past: data.feed.entry[i].gsx$past.$t,
           present: data.feed.entry[i].gsx$present.$t,
           future: data.feed.entry[i].gsx$future.t,
-          yesno: data.feed.entry[i].gsx$yesno.$t
+          yesno: data.feed.entry[i].gsx$yesno.$t,
+          inverted: false
         };
         cardsArr.push(card);
       }
+
       setDeck(cardsArr);
     }
   }, []);
 
+  const spreadLength = 3;
+  const cardsDealt = deck.slice(0, spreadLength);
+
+  const shuffleDeck = () => {
+    // https://javascript.info/task/shuffle
+    // https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+
+    //map the deck into a new faux-array
+    let shuffleArr = deck.map(d => d);
+    // starting from the end of the arr...
+    for (let i = shuffleArr.length - 1; i > 0; i--) {
+      // ...pick a random position / card in front of i...
+      let j = Math.floor(Math.random() * (i + 1));
+      // ... and swap those two cards / reassign the positions
+      [shuffleArr[i], shuffleArr[j]] = [shuffleArr[j], shuffleArr[i]];
+      // make sure to add a line that might invert the card
+    }
+    // update deck state
+    setDeck(shuffleArr);
+  };
+
   return (
     <div className="App">
       <Header />
-      <Spacer />
       <Cosmos />
       <Spacer />
-      <Shuffle />
+      <DeckActions shuffleDeck={shuffleDeck} />
       <Spacer />
-      <ReadingTable deck={deck} />
+      <ThreeCardTable cardsDealt={cardsDealt} />
       <Spacer />
-      <ReadingExplain deck={deck} />
-      <Spacer />
+      <ReadingExplain cardsDealt={cardsDealt} />
       <Footer />
     </div>
   );

@@ -1,17 +1,15 @@
 import React from "react";
 
 function ReadingTable(props) {
-  const spreadLength = 3;
-
-  const cardsDealt = props.deck.slice(0, spreadLength);
+  const cardsDealt = props.cardsDealt;
 
   const readingSpread = cardsDealt.map((d, i) => {
     return (
       //make col-# divisible by 12?
-      <div className="col-4">
-        <img src={props.deck[i].pic} alt={props.deck[i].cardName} />
+      <div className="col-4" key={i}>
+        <img src={cardsDealt[i].pic} alt={cardsDealt[i].cardName} />
         <br />
-        {props.deck[i].cardName}
+        {cardsDealt[i].cardName}
       </div>
     );
   });
